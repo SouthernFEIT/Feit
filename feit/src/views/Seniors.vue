@@ -12,41 +12,13 @@
       <div class="cards">
         <div v-for="(senior,index) in seniors" v-bind:key="index">
           <div v-if="index >= indexe && index < indexes">
-            <v-card max-width="300" class="cardInside" max-height="300">
-              <v-list-item class="listItem" three-line>
-                <v-list-item-avatar color="grey">
-                  <v-img v-bind:src="senior.imgUrl" height="194"></v-img>
-                </v-list-item-avatar>
-
-                <v-list-item-content>
-                  <v-list-item-title style="margin-bottom:3%">
-                    <b>{{senior.name}}</b>
-                  </v-list-item-title>
-                  <v-list-item-subtitle style="font-size:12px;padding:0;">{{senior.position}}</v-list-item-subtitle>
-                </v-list-item-content>
-              </v-list-item>
-
-              <v-card-actions>
-                <v-list-item-content class="greyColor">
-                  <v-list-item-title class="headline listActions">
-                    <v-btn text color="deep-purple accent-4">
-                      <v-avatar size="36" color="#F1EEF9">
-                        <img src="../../svg/location.svg" style="width:18px" />
-                      </v-avatar>
-                      <span class="black--text">{{senior.location}}</span>
-                    </v-btn>
-                  </v-list-item-title>
-                  <v-list-item-subtitle class="listActions">
-                    <v-btn text color="deep-purple accent-4">
-                      <v-avatar size="36" color="#F1EEF9">
-                        <img src="../../svg/phone.svg" style="width:18px" />
-                      </v-avatar>
-                      <span class="black--text">{{senior.phoneNumber}}</span>
-                    </v-btn>
-                  </v-list-item-subtitle>
-                </v-list-item-content>
-              </v-card-actions>
-            </v-card>
+            <Card 
+            :imgUrl="senior.imgUrl"
+            :name="senior.name"
+            :position="senior.position"
+            :location="senior.location"
+            :phoneNumber="senior.phoneNumber"
+        />
           </div>
         </div>
         <!-- v-if -->
@@ -148,8 +120,13 @@
 </template>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script>
+import Card from '../components/cards/Card'
+
 export default {
   name: "Seniors",
+  components: {
+      Card
+  },
   data() {
     return {
       page: 1,
