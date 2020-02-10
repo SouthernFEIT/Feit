@@ -1,7 +1,6 @@
 <template>
     <div>
-        <div class="center">
-      <div class="cards">
+   
             <v-card max-width="300" class="cardInside" max-height="300">
               <v-list-item class="listItem" three-line>
                 <v-list-item-avatar color="grey">
@@ -42,9 +41,6 @@
       </div>
       <!-- cards -->
  
-    </div>
-
-    </div>
 </template>
 
 <script>
