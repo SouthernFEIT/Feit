@@ -125,8 +125,7 @@ import Card from '../components/cards/Card'
 
 export default {
   components: {
-      Card,
-      Nav
+      Card
   },
   name: "Seniors",
   components: {
