@@ -1,8 +1,13 @@
 <template>
     <div>
+<<<<<<< HEAD
         <div class="center">
       <div class="cards">
             <v-card max-width="300" class="cardInside" max-height="300">
+=======
+
+            <v-card  class="cardInside" >
+>>>>>>> 2c40fe24e109725e6b135c36d5002444dd55ef81
               <v-list-item class="listItem" three-line>
                 <v-list-item-avatar color="grey">
                   <v-img v-bind:src="imgUrl" height="194"></v-img>
@@ -37,6 +42,7 @@
                 </v-list-item-content>
               </v-card-actions>
             </v-card>
+<<<<<<< HEAD
         
         <!-- v-if -->
       </div>
@@ -45,6 +51,13 @@
     </div>
 
     </div>
+=======
+
+        <!-- v-if -->
+      </div>
+      <!-- cards -->
+
+>>>>>>> 2c40fe24e109725e6b135c36d5002444dd55ef81
 </template>
 
 <script>
@@ -66,6 +79,11 @@ export default {
 }
 .cardInside {
   margin: 5% 0% 5% 5%;
+<<<<<<< HEAD
+=======
+  max-width: 300px;
+  max-height: 300px;
+>>>>>>> 2c40fe24e109725e6b135c36d5002444dd55ef81
 }
 .greyColor {
   background: #f9f9fd;
@@ -74,18 +92,38 @@ export default {
 .v-card__actions {
   padding: 0;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 2c40fe24e109725e6b135c36d5002444dd55ef81
 .listItem {
   padding: 7%;
 }
 .listActions {
   padding: 4%;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 2c40fe24e109725e6b135c36d5002444dd55ef81
 .v-list-item__subtitle {
   overflow-wrap: break-word;
   word-wrap: break-word;
   white-space: unset;
   padding: 5%;
 }
+<<<<<<< HEAD
 </style>
+=======
+
+@media screen and (max-width: 960px) {
+    .cardInside{
+        margin-bottom: 10%;
+        max-width: 960px;
+        width:100%;
+    }
+
+    
+}
+</style> 
+>>>>>>> 2c40fe24e109725e6b135c36d5002444dd55ef81

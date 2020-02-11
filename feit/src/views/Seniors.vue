@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Nav/>
     <div class="top">
       <h1 class>Seniors in Work</h1>
       <br />
@@ -12,7 +13,8 @@
       <div class="cards">
         <div v-for="(senior,index) in seniors" v-bind:key="index">
           <div v-if="index >= indexe && index < indexes">
-            <Card 
+           <Card 
+
             :imgUrl="senior.imgUrl"
             :name="senior.name"
             :position="senior.position"
@@ -25,7 +27,7 @@
       </div>
       <!-- cards -->
       <div class="text-center">
-        <v-pagination v-model="page" :length="Math.ceil(seniors.length/9)"></v-pagination>
+        <v-pagination v-model="page" :length="Math.ceil(seniors.length/[smaller?3:9])"></v-pagination>
       </div>
     </div>
     <!-- center -->
@@ -34,9 +36,7 @@
       <div class="cards space">
         <div class="cardsForSenior">
           <v-card
-            max-width="500"
-            min-width="500"
-            class="cardInside"
+            class="cardInside size"
             v-for="index in 2"
             v-bind:key="index"
           >
@@ -57,9 +57,9 @@
             </v-list-item>
 
             <v-card-actions>
-              <v-list-item-content class="greyColor">
+              <v-list-item-content>
                 <v-list-item-subtitle>
-                  <div class="text">{{thoughts[index-1].text}}</div>
+                  <div>{{thoughts[index-1].text}}</div>
                 </v-list-item-subtitle>
               </v-list-item-content>
             </v-card-actions>
@@ -67,7 +67,7 @@
         </div>
         <!-- left -->
         <div class="right">
-          <v-card max-width="500" min-width="500" class="cardInside">
+          <v-card  class="cardInside size">
             <v-list-item>
               <v-list-item-avatar color="grey" height="90" width="90">
                 <v-img v-bind:src="thoughts[2].imgUrl"></v-img>
@@ -83,13 +83,13 @@
             </v-list-item>
 
             <v-card-actions>
-              <v-list-item-content class="greyColor">
-                <v-list-item-subtitle>{{thoughts[2].text}}</v-list-item-subtitle>
+              <v-list-item-content >
+                <v-list-item-subtitle >{{thoughts[2].text}}</v-list-item-subtitle>
               </v-list-item-content>
             </v-card-actions>
           </v-card>
 
-          <v-card max-width="500" min-width="500" class="cardInside">
+          <v-card  class="cardInside size">
             <v-list-item>
               <v-list-item-avatar color="grey" height="90" width="90">
                 <v-img v-bind:src="thoughts[3].imgUrl"></v-img>
@@ -105,7 +105,7 @@
             </v-list-item>
 
             <v-card-actions>
-              <v-list-item-content class="greyColor">
+              <v-list-item-content>
                 <v-list-item-subtitle>{{thoughts[3].text}}</v-list-item-subtitle>
               </v-list-item-content>
             </v-card-actions>
@@ -116,13 +116,18 @@
       <!-- cards -->
     </div>
     <!-- seniorThoughts -->
+    <Footer/>
   </div>
 </template>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script>
 import Card from '../components/cards/Card'
-
+import Nav from '../components/navBar/Nav'
+import Footer from '../components/footer/Footer'
 export default {
+  components: {
+      Card
+  },
   name: "Seniors",
   components: {
       Card
@@ -263,18 +268,62 @@ export default {
           text: "Lorem impusum",
           imgUrl: require("../assets/images/hero.png")
         }
-      ]
+      ],
+      windowWidth:window.innerWidth,
+      smaller:false,
     }; //return
   }, //data
   watch: {
     page: function(val) {
+      if(this.smaller){
+        this.indexes = val *3;
+        this.indexe = this.indexes -3;
+      }
+      else{
       this.indexes = val * 9;
       this.indexe = this.indexes - 9;
+      }
+
+    },
+    windowWidth(){
+      if(this.windowWidth<=960){
+        this.smaller = true;
+      }
+      else{
+        this.smaller = false;
+      }
+    },
+    smaller(){
+      if(this.smaller){
+        this.indexes = this.page * 3;
+        this.indexe = this.indexes -3;
+      }
+      else{
+        this.page = 1;
+      }
     }
-  } //watch
+  },
+  created() {
+  window.addEventListener("resize", this.myEventHandler);
+  if(window.innerWidth<=960){
+    this.smaller = true;
+  }
+
+},
+destroyed() {
+  window.removeEventListener("resize", this.myEventHandler);
+},
+methods: {
+  myEventHandler(e) {
+    this.windowWidth = window.innerWidth;
+  }
+} //watch
 };
 </script>
 <style scoped>
+*{
+  line-height:inherit;
+}
 .top {
   background-image: url("../assets/images/senior_in_work_hero.png");
   background-position: center top;
@@ -294,10 +343,6 @@ export default {
 }
 .cardInside {
   margin: 5% 0% 5% 5%;
-}
-.greyColor {
-  background: #f9f9fd;
-  margin: 0;
 }
 .v-card__actions {
   padding: 0;
@@ -327,5 +372,28 @@ export default {
 }
 .wordSeniorThoughts {
   padding: 5%;
+}
+
+.size{
+    width:500px; 
+    min-height:250px;
+    }
+
+@media screen and (max-width: 960px) {
+    
+    .top{
+      padding:0 0 1% 0;
+    }
+
+    .size{
+      width:100%;
+      max-width: 960px;
+      min-height: 0;
+      display:block;
+    }
+
+    .cards{
+        display:block;
+    }
 }
 </style>
