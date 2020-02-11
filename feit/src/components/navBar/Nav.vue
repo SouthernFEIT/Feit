@@ -9,7 +9,10 @@
       ></v-app-bar-nav-icon>
       <v-spacer v-show="isShow"></v-spacer>
 
-      <v-toolbar-title class="black--text">
+      <v-toolbar-title
+        class="black--text logo"
+        @click="backHome"
+      >
         <div class="d-flex align-center">
           <v-img
             width="30px"
@@ -54,6 +57,7 @@
             class="mt-2"
           >
             <img
+              @click="backHome"
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Adidas_Logo.svg/1280px-Adidas_Logo.svg.png"
               alt=""
             >
@@ -112,6 +116,9 @@
       },
       toggleDrawer() {
         this.drawer = !this.drawer;
+      },
+      backHome() {
+        this.$router.push("/");
       }
     },
     mounted() {
@@ -141,5 +148,8 @@ img {
   .nav-link-space {
     margin-left: 35px;
     text-align: right
+  }
+  .logo :hover {
+    cursor: pointer;
   }
 </style>
