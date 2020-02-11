@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Nav/>
     <div class="top">
       <h1 class>Seniors in Work</h1>
       <br />
@@ -120,10 +121,12 @@
 <script>
 
 import Card from '../components/cards/Card'
+import Nav from '../components/navBar/Nav'
 
 export default {
   components: {
-      Card
+      Card,
+      Nav
   },
   name: "Seniors",
   data() {
