@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Nav/>
+
     <div class="top">
       <h1 class>Seniors in Work</h1>
       <br />
@@ -14,6 +14,7 @@
         <div v-for="(senior,index) in seniors" v-bind:key="index">
           <div v-if="index >= indexe && index < indexes">
            <Card 
+
             :imgUrl="senior.imgUrl"
             :name="senior.name"
             :position="senior.position"
@@ -115,21 +116,21 @@
       <!-- cards -->
     </div>
     <!-- seniorThoughts -->
+    <Footer/>
   </div>
 </template>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script>
-
 import Card from '../components/cards/Card'
-import Nav from '../components/navBar/Nav'
-import Footer from '../components/'
 
 export default {
   components: {
-      Card,
-      Nav
+      Card
   },
   name: "Seniors",
+  components: {
+      Card
+  },
   data() {
     return {
       page: 1,

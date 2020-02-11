@@ -72,12 +72,14 @@ export default {
 .v-card__actions {
   padding: 0;
 }
+
 .listItem {
   padding: 7%;
 }
 .listActions {
   padding: 4%;
 }
+
 .v-list-item__subtitle {
   overflow-wrap: break-word;
   word-wrap: break-word;
