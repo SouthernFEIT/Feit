@@ -6,13 +6,15 @@ const Lectures = () => import("@/views/Lectures")
 Vue.use(VueRouter)
 
 const routes = [
+
   {
     path: "/",
     component: Home
   },
   {
     path: "/seniors",
-    component: Seniors
+    component: Seniors,
+
   },
   {
     path: "/Lectures",
@@ -23,7 +25,8 @@ const routes = [
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
-  routes
+  routes,
+
 })
 
 export default router

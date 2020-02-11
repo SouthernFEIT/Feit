@@ -15,8 +15,11 @@
           sm="12"
           md="5"
         >
-          <div class="pl-4 ">
-            <h2 class="white--text">FEIT</h2>
+          <div class="pl-4 logo ">
+            <h2
+              class="white--text"
+              @click="backHome"
+            >FEIT</h2>
             <span class="white--text">
               Copyright © FEIT
             </span>
@@ -110,6 +113,11 @@
           }
         ]
       };
+    },
+    methods: {
+      backHome() {
+        this.$router.push("/");
+      }
     }
   };
 </script>
@@ -122,5 +130,8 @@
   }
   .normal-font {
     font-family: feit-normal !important
+  }
+  .logo :hover {
+    cursor: pointer;
   }
 </style>
