@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Nav/>
     <div class="top">
       <h1 class>Seniors in Work</h1>
       <br />
@@ -120,10 +121,13 @@
 <script>
 
 import Card from '../components/cards/Card'
+import Nav from '../components/navBar/Nav'
+import Footer from '../components/'
 
 export default {
   components: {
-      Card
+      Card,
+      Nav
   },
   name: "Seniors",
   data() {
@@ -140,7 +144,7 @@ export default {
           imgUrl: require("../assets/images/hero.png")
         },
         {
-          name: "John Does",
+          name: "John Does ",
           position: "Junior Front-end Developer",
           location: "Johor",
           phoneNumber: "012-3456789",
