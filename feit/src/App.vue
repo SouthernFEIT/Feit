@@ -65,6 +65,24 @@ h1,h2,h3,h4,h5,h6, a {
   font-family: feit-semibold;
 }
 
+.container {
+  display: flex;
+  padding: 1em 2em;
+}
+
+
+.cards-container {    
+  display: grid;
+  grid-template-areas: 'c c c'; 
+  grid-auto-columns: minmax(30%, 1fr);
+  gap: 2em;  
+  /* background: #000;   */
+  width: 100%;    
+  padding: 0 0 2em 0;
+}
+
+
+
 .normal-title, .bold-title, .hero-title, .sub-herotitle {  
   color: var(--dark) !important; 
   font-family: feit-semibold;
@@ -103,6 +121,16 @@ h1,h2,h3,h4,h5,h6, a {
   :root{
     font-size: 14px;
   }
+  
+
+  .cards-container {
+    grid-template-areas: 'c c';
+  }
 }
 
+@media screen and (max-width: 600px){
+  .cards-container {
+    grid-template-areas: 'c';
+  }
+}
 </style>

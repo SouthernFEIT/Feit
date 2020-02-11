@@ -60,10 +60,11 @@ export default {
   flex-wrap: wrap;
   white-space: nowrap;
 }
-.cardInside {
-  margin: 5% 0% 5% 5%;
-  max-width: 300px;
-  max-height: 300px;
+.cardInside {  
+  /* max-width: 300px; */
+  /* max-height: 300px; */
+  background: #FFFFFF;
+  box-shadow: 0px 14px 50px rgba(0, 0, 0, 0.1) !important;
 }
 .greyColor {
   background: #f9f9fd;
@@ -88,12 +89,6 @@ export default {
 }
 
 @media screen and (max-width: 960px) {
-    .cardInside{
-        margin-bottom: 10%;
-        max-width: 960px;
-        width:100%;
-    }
-
     
 }
 </style> 

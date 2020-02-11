@@ -4,8 +4,7 @@
     dark
     class="py-0"
   >
-    <v-container
-      fluid
+    <v-container      
       class="px-0"
     >
       <v-row>
