@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Nav/>
+
     <div class="top">
       <h1 class>Seniors in Work</h1>
       <br />
@@ -122,9 +122,6 @@
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script>
 import Card from '../components/cards/Card'
-import Nav from '../components/navBar/Nav'
-
-import Footer from '../components/footer/Footer'
 
 export default {
   components: {
