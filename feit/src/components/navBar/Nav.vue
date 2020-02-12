@@ -2,6 +2,7 @@
   <div>
     <v-app-bar color="white accent-4">
 
+      <v-container>
       <v-app-bar-nav-icon
         @click="toggleDrawer"
         v-show="isShow"
@@ -41,6 +42,8 @@
 
         </ul>
       </div>
+      
+      </v-container>
     </v-app-bar>
 
     <v-navigation-drawer
@@ -100,7 +103,7 @@
         nav: [
           { name: "Home", url: "/" },
           { name: "Senior in Work", url: "/seniors" },
-          { name: "Lectures & Staff", url: "lectures" }
+          { name: "Lectures & Staff", url: "/lecturer" }
         ]
       };
     },

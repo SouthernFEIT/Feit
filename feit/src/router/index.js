@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 const Home = () => import("@/views/Home.vue")
 const Seniors = () => import("@/views/Seniors")
-const Lectures = () => import("@/views/Lectures")
+const Lecturer = () => import("@/views/Lecturer")
 Vue.use(VueRouter)
 
 const routes = [
@@ -17,8 +17,8 @@ const routes = [
 
   },
   {
-    path: "/Lectures",
-    component: Lectures
+    path: "/Lecturer",
+    component: Lecturer
   }
 ]
 
