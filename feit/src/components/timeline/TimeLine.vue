@@ -60,7 +60,7 @@ export default {
 .timeline-container {
     /* background: #f8f8f8; */
     margin: 0 auto;
-    max-width: 900px;
+    max-width: 100%;
     width: 100%;
     padding: 2em 0;
 }
@@ -85,7 +85,7 @@ export default {
     background: rgba(93, 106, 139, 0.1);
 }
 
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 600px) {
     
     .timeline::before {
         left: 2em;        

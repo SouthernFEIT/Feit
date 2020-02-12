@@ -70,6 +70,12 @@ h1,h2,h3,h4,h5,h6, a {
   padding: 1em 2em;
 }
 
+.primary-btn {
+  background: #4816D7 !important;
+  color: #fff !important;
+  border-radius: 0;
+  padding: .5em 1.5em !important;
+}
 
 .cards-container {    
   display: grid;
@@ -95,16 +101,16 @@ h1,h2,h3,h4,h5,h6, a {
 }
 
 .bold-title {  
-  font-size: 1.1rem;      
+  font-size: 1.25rem;      
 }
 
 .hero-title {
-  font-size: 2.5rem;
+  font-size: 2rem;
   line-height: 1.2;
 }
 
 .sub-herotitle {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   line-height: 1.1;
 }
 

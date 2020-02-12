@@ -81,7 +81,7 @@ export default {
   line-height: 1.75;
 }
 
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 600px) {
   .timeline .right {
     align-self: flex-start !important;
   }

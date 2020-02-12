@@ -2,7 +2,7 @@
   <div>
     <v-app-bar color="white accent-4">
 
-      <v-container>
+      <v-container style="align-items:center">
       <v-app-bar-nav-icon
         @click="toggleDrawer"
         v-show="isShow"
