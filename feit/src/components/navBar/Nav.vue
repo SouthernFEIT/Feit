@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-app-bar color="white accent-4">
+    <v-app-bar color="white">
 
       <v-container style="align-items:center">
       <v-app-bar-nav-icon
@@ -137,6 +137,14 @@
   };
 </script>
 <style scoped>
+
+header {
+  padding: .5em 0;
+  z-index: 99;
+  background: #fff;  
+  height: auto !important;
+}
+
 img {
   width: 100% !important;
   height: 100%;
@@ -145,8 +153,9 @@ img {
     list-style-type: none;
   }
   .nav-link-color {
-    color:#A7A9AF !important;
-    font-size: 14px;
+    color:#0C0F18 !important;
+    opacity: .7;
+    font-size: .8rem;
   }
   .nav-link-space {
     margin-left: 35px;
@@ -155,4 +164,14 @@ img {
   .logo :hover {
     cursor: pointer;
   }
+
+  header .container {    
+     padding: 1em;
+   }
+
+@media screen and (max-width: 600px){
+   header .container {
+     padding: 1em 0;
+   }
+}
 </style>

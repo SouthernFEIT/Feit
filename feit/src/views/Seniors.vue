@@ -1,9 +1,8 @@
 <template>
   <div>
     <div class="top">
-      <h1 class>Seniors in Work</h1>
-      <br />
-      <p>Finds out what company the FEIT graduated students have been worked with.</p>
+      <h1 class>Seniors in Work</h1>      
+      <p style="opacity:.7">Finds out what company the FEIT graduated students have been worked with.</p>
     </div>
     <!-- top -->
     <!-- content -->
@@ -26,7 +25,7 @@
 
         <!-- cards -->
       <div class="text-center">
-        <v-pagination v-model="page" :length="Math.ceil(seniors.length/9)"></v-pagination>
+        <v-pagination color="var(--primary-color)" v-model="page" :length="Math.ceil(seniors.length/9)"></v-pagination>
       </div>
         
       </v-container>      
@@ -45,12 +44,12 @@
               </v-list-item-avatar>
 
               <v-list-item-content>
-                <div class="overline mb-4">{{thought.overline}}</div>
-                <v-list-item-title style="margin-bottom:3%">
+                <div class="card__text--normal mb-2" style="opacity:.6">{{thought.overline}}</div>
+                <v-list-item-title style="margin:.5em 0">
                   <b>{{thought.name}}</b>
                 </v-list-item-title>
                 <v-list-item-subtitle
-                  style="font-size:12px;padding:0;"
+                  class="card__text--normal px-0 py-0"
                 >{{thought.position}}</v-list-item-subtitle>
               </v-list-item-content>
             </v-list-item>
@@ -296,18 +295,19 @@ export default {
   padding: 5em 0;
   color: white;  
 }
-.listItem {
-  padding: 7%;
-}
-.listActions {
-  padding: 4%;
+
+
+.card__text--normal {
+  font-size: .8rem;
+  opacity: .7;
+  color: #0C0F18 !important;
 }
 
 .v-list-item__subtitle {
   overflow-wrap: break-word;
   word-wrap: break-word;
   white-space: unset;
-  padding: 5%;
+  padding: 1em;
 }
 .right {
   bottom: -1.5em;
@@ -326,7 +326,7 @@ export default {
 }
 
 .cardInside {
-  padding: 1.5em;
+  padding: 1em 1.5em;
   width: 100%;
   max-width: 100%;
   background: #FFFFFF;
@@ -358,7 +358,7 @@ export default {
 }
 
 
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 600px) {
   .cards4senior-container {
     grid-template-areas: 'c';
   }

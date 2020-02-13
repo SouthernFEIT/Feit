@@ -16,15 +16,15 @@
           <div class="feit__left">
             <div class="feit-left__card">
               <v-icon class="feit--svg">$Teacher</v-icon>
-              <p class="paragraph">20 Lecturers</p>
+              <p class="paragraph pt-2">20 Lecturers</p>
             </div>
             <div class="feit-left__card">
               <v-icon class="feit--svg">$Building</v-icon>
-              <p class="paragraph">20 Lecturers</p>
+              <p class="paragraph pt-2">20 Lecturers</p>
             </div>
             <div class="feit-left__card">
               <v-icon class="feit--svg">$EducationHat</v-icon>
-              <p class="paragraph">20 Lecturers</p>
+              <p class="paragraph pt-2">20 Lecturers</p>
             </div>
           </div>
           <div class="feit__right">
@@ -57,7 +57,7 @@
       <v-container class="flex-column">
         <h3 class="mb-3 text-center">Our Objectives</h3>
         <div class="objectives-cards-container">
-          <div class="pa-4 ma-2">
+          <div class="objectives__card">
             <v-icon class="mb-3 objectives-cards--logo">$BriefCase</v-icon>
             <h4 class="mt-4 mb-1">Opportunities</h4>
             <p
@@ -65,7 +65,7 @@
             >Though the gravity still dragged at him, his muscles were making great efforts to adjust. After the daily classes he no longer collapsed immediately into bed. Only the nightmares got worse.</p>
           </div>
 
-          <div class="pa-4 ma-2">
+          <div class="objectives__card">
             <v-icon class="mb-3 objectives-cards--logo">$CreativeIdea</v-icon>
             <h4 class="mt-4 mb-1">Ideas</h4>
             <p
@@ -73,7 +73,7 @@
             >Though the gravity still dragged at him, his muscles were making great efforts to adjust. After the daily classes he no longer collapsed immediately into bed. Only the nightmares got worse.</p>
           </div>
 
-          <div class="pa-4 ma-2">
+          <div class="objectives__card">
             <v-icon class="mb-3 objectives-cards--logo">$PersonalDevelopment</v-icon>
             <h4 class="mt-4 mb-1">Skills</h4>
             <p
@@ -95,7 +95,7 @@
         height="443"
         onload="this.style.height=(this.contentWindow.document.body.scrollHeight+9)+'px';"
         type="text/html"
-        src="https://www.youtube.com/embed/DBXH9jJRaDk?autoplay=0&fs=0&iv_load_policy=3&showinfo=0&rel=0&cc_load_policy=0&start=0&end=0&origin=https://youtubeembedcode.com"
+        src="https://www.youtube.com/embed/F93eFpRlIUE"
       ></iframe>
 
       <!-- timeline -->
@@ -104,14 +104,14 @@
 
     <section class="last-section">
       <v-container>
-      <div class="last__left">
-        <h3>Know more about your seniors.</h3>
-        <p
-          class="paragraph"
-        >Sometimes you might wonder or worried about your plan after graduating from college. Then, it is a good time for you to take a look about other senior, seeing where they work, or even contact them.</p>
-        <button class="primary-btn mt-5">Find out more</button>
-      </div>
-      <img class="last__right" src="../assets/images/sample_seniors.png" alt="seniors_in_works">
+        <div class="last__left">
+          <h3>Know more about your seniors.</h3>
+          <p
+            class="paragraph"
+          >Sometimes you might wonder or worried about your plan after graduating from college. Then, it is a good time for you to take a look about other senior, seeing where they work, or even contact them.</p>
+          <button class="primary-btn mt-5">Find out more</button>
+        </div>
+        <img class="last__right" src="../assets/images/sample_seniors.png" alt="seniors_in_works" />
       </v-container>
     </section>
   </div>
@@ -261,11 +261,16 @@ export default {
 }
 
 .objectives-section {
-  padding: 3em 0;
+  padding: 5em 0;
 }
 
 .objectives-cards-container {
   display: flex;
+  margin-top: 2.5em;
+}
+
+.objectives__card {
+  padding: 0 2.5em 0 0;
 }
 
 .objectives-cards--logo {
@@ -342,16 +347,20 @@ iframe {
     flex-flow: column;
   }
 
+  .objectives__card {
+    padding: 1.5em 0;
+  }
+
   .last-section .container {
     flex-flow: column-reverse;
   }
 
   .last__left {
-    padding: 3em 0 2em 0;    
+    padding: 3em 0 2em 0;
   }
 
   .last__right {
-    max-width: 100%;    
+    max-width: 100%;
   }
 }
 </style>

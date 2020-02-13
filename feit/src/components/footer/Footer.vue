@@ -1,11 +1,9 @@
 <template>
   <v-footer    
-    dark
-    class="py-0"
+    dark    
+    class="footer"
   >
-    <v-container      
-      class="px-0"
-    >
+    <v-container>
       <v-row>
         <v-col
           class="px-0"
@@ -18,7 +16,7 @@
               class="white--text"
               @click="backHome"
             >FEIT</h2>
-            <span class="white--text">
+            <span class="paragraph sub-color" style="font-family:feit-semibold !important;">
               Copyright © FEIT
             </span>
           </div>
@@ -32,7 +30,7 @@
         >
           <v-container
             fluid
-            class="px-4"
+            class="px-4 py-0"
           >
             <v-row>
               <v-col
@@ -51,12 +49,12 @@
                 >
                   <li>
                     <router-link
-                      class="sub-color normal-font"
+                      class="sub-color paragraph"
                       v-if="id === 0"
                       :to="sub.url"
                     > {{sub.name}}</router-link>
                     <a
-                      class="sub-color normal-font"
+                      class="paragraph sub-color"
                       v-else
                       :href="sub.url"
                     >
@@ -120,6 +118,11 @@
   };
 </script>
 <style scoped>
+  footer {
+    min-height: 30vh;
+    padding: 3em 0;
+    background: #0C0F18 !important;
+  }
   .sub-color {
     color:#A7A9AF !important;
   }
