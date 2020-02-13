@@ -41,7 +41,7 @@ import Footer from '../src/components/footer/Footer'
   font-size: 18px;
 
   /* Not sure if we can set this through vuetify, but still added first */
-  --primary-color: #4816D7;
+  --primary-color: rgb(79, 39, 223);
   --primary-color--light: #F9F9FD;
   --grey: #5D6A8B;  
   --grey-light: #6d6d6d;
@@ -59,9 +59,10 @@ import Footer from '../src/components/footer/Footer'
 a {
   color: var(--primary-color) !important;
   text-decoration: none;
+  font-family: feit-normal !important;
 }
 
-h1,h2,h3,h4,h5,h6, a {
+h1,h2,h3,h4,h5,h6 {
   font-family: feit-semibold;
 }
 
@@ -71,10 +72,16 @@ h1,h2,h3,h4,h5,h6, a {
 }
 
 .primary-btn {
-  background: #4816D7 !important;
+  background: var(--primary-color) !important;
   color: #fff !important;
   border-radius: 0;
-  padding: .5em 1.5em !important;
+  font-size: .9rem !important;
+  padding: .75em 1.25em !important;
+}
+
+.primary-btn:hover {
+  transition: background 300ms ease-out;
+  background: #3e10be !important;
 }
 
 .cards-container {    
